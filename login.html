@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f0f8ff;  
+          color: #333;
+        }
+        
+        h1 {
+          text-align: center;
+          color: #007bff;  
+          padding: 20px 0;
+        }
+        
+        h3 {
+          text-align: center;
+          color: #007bff;
+          font-size: 24px;
+          margin-top: 20px;
+        }
+        
+        form {
+          width: 300px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #ffffff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+        
+        label {
+          display: block;
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+        
+        button {
+          width: 100%;
+          padding: 10px;
+          background-color: #6c95c0;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+        button:hover {
+          background-color: #0056b3;  
+        }
+        
+
+        </style>
+</head>
+<body>
+    <h1>Recipe Blog</h1>
+    <form action="">
+        <h3>Sign-up</h3>
+        <label for="name">Name</label>
+        <input type="text" class="name" >
+<br><br>
+        <label for="mobile">Mobile </label>
+        <input type="tel" class="name" >
+<br> <br>
+        <label for="email">Email</label>
+        <input type="email" class="name"  >
+<br><br>
+        <label for="name">Create password</label>
+        <input type="password" class="name" >
+<br> <br>
+       
+
+    </form>
+    <a href="recipeBlog.html"><button>submit</button></a> 
+    <script>
+        function validateForm() {
+           
+          document.getElementById("nameError").textContent = "";
+          document.getElementById("emailError").textContent = "";
+          document.getElementById("passwordError").textContent = "";
+           
+    
+          let isValid = true;
+     
+          const name = document.getElementById("name").value.trim();
+          if (name === "") {
+            document.getElementById("nameError").textContent = "Name is required.";
+            isValid = false;
+          }
+    
+           
+          const email = document.getElementById("email").value.trim();
+          const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (email === "") {
+            document.getElementById("emailError").textContent = "Email is required.";
+            isValid = false;
+          } else if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent = "Invalid email format.";
+            isValid = false;
+          }
+    
+           
+          const password = document.getElementById("password").value.trim();
+          if (password === "") {
+            document.getElementById("passwordError").textContent = "Password is required.";
+            isValid = false;
+        } else if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters long.";
+        isValid = false;
+      }
+
+       
+      
+      if (isValid) {
+        alert("Form submitted successfully!");
+      }
+    }
+  </script>
+</body>
+</html>    
+ 
